@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'dynamic_icon_flutter'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'Flutter plugin for IOS app icon changing.'
   s.description      = <<-DESC
 A new flutter plugin project.
