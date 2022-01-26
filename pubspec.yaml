@@ -1,6 +1,6 @@
 name: dynamic_icon_flutter
-description: A flutter plugin for dynamically changing app icon
-version: 0.0.4
+description: A flutter plugin for dynamically changing app icon, support IOS version > 10.3 and Android
+version: 0.0.5
 homepage: https://github.com/chuanpham
 repository: https://github.com/chuanpham/dynamic_icon_flutter
 issue_tracker: https://github.com/chuanpham/dynamic_icon_flutter/issues

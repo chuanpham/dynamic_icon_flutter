@@ -14,3 +14,6 @@
 
 * Big update ^^
 
+## 0.0.5
+
+* Update README for IOS integration, fix bugs
