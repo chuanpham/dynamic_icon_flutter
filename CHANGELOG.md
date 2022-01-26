@@ -5,3 +5,8 @@
 ## 0.0.2
 
 * Update example
+
+## 0.0.3
+
+* Update Android icon changing
+
