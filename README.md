@@ -3,9 +3,10 @@
 A flutter plugin for dynamically changing app icon in mobile platform. Supports **iOS and Android** (IOS with version > `10.3`).
 ## Known issues
 
-* Each android version will have different behavior, with Android 8 it may take a few seconds before we notice the change
-* Note: Using this feature on some android versions will cause your app to crash (it will crash the first time you change the icon, next time it won't), you can read more about this issue [here](https://github.com/tastelessjolt/flutter_dynamic_icon/pull/10#issuecomment-959260628)
-## Usage
+* Each android version will have different behavior, with Android 8 it may take a few seconds before we can notice the change
+* Caution: Using this feature on some android versions will cause your app to crash (it will crash the first time you change the icon, next time it won't), it's a bad user experience that you have to crash the app to change the app icon, you can read more about this issue [here](https://github.com/tastelessjolt/flutter_dynamic_icon/pull/10#issuecomment-959260628)
+### Android  Integration
+
 1. Add the latest version of the plugin to your `pubpsec.yaml` under dependencies section
 2. Run `flutter pub get`
 3. Update `android/src/main/AndroidManifest.xml` as follows:
@@ -71,7 +72,7 @@ A flutter plugin for dynamically changing app icon in mobile platform. Supports 
     * Declare an list of string (your available app icons)
 	* Dont forget to add `MainActivity` to your list
     ```dart
-    List<String> list = ["icon_1", "icon_2", "icon_n", "MainActivity"]
+    const List<String> list = ["icon_1", "icon_2", "icon_n", "MainActivity"]
     DynamicIconFlutter.setIcon(icon: 'icon_1', listAvailableIcon: list);
     ```
 
@@ -99,7 +100,7 @@ To integrate your plugin into the iOS part of your app, follow these steps
 
 Note that if you need it work for iPads, You need to add these icon declarations in `CFBundleIcons~ipad` as well. [See here](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW14) for more details.
 
-Here is my `Info.plist` after adding Alternate Icons
+Here is `Info.plist` after adding Alternate Icons
 #### Screenshot
 
 ![info.plist](https://raw.githubusercontent.com/tastelessjolt/flutter_dynamic_icon/master/imgs/info-plist.png)
