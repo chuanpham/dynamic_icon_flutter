@@ -69,8 +69,9 @@ A flutter plugin for dynamically changing app icon in mobile platform. Supports 
 4. You can have multiple app icon, in your app you can now use:
     * The name you pass in the method must be in the `AndroidManifest.xml` and for each icon, you must declare an activity-alias in `AndroidManifest.xml` like above
     * Declare an list of string (your available app icons)
+	* Dont forget to add `MainActivity` to your list
     ```dart
-    List<String> list = ["icon_1", "icon_2", "icon_n"]
+    List<String> list = ["icon_1", "icon_2", "MainActivity" "icon_n"]
     DynamicIconFlutter.setIcon(icon: 'icon_1', listAvailableIcon: list);
     ```
 
