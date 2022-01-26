@@ -39,10 +39,10 @@ A flutter plugin for dynamically changing app icon in mobile platform. Supports 
 
         <!-- The activity-alias are your alternatives icons and name of your app, the default one must be enabled (and the others disabled) and the name must be ".DEFAULT". All the names of your activity-alias' name must begin with a dot. -->
 
-        <!-- FOR NOW USE "ALT" AS ALTERNATIVE ICON NAME, FOLLOW https://github.com/GioPan04/flutter_icon_switcher/issues/1 FOR MORE INFO -->
+        <!-- FOR NOW USE "icon_1" AS ALTERNATIVE ICON NAME -->
 
         <activity-alias
-            android:label="Blue"
+            android:label="Your app"
             android:icon="@mipmap/ic_launcher_1"
             android:name=".icon_1"
             android:enabled="false"
@@ -71,7 +71,7 @@ A flutter plugin for dynamically changing app icon in mobile platform. Supports 
     * Declare an list of string (your available app icons)
 	* Dont forget to add `MainActivity` to your list
     ```dart
-    List<String> list = ["icon_1", "icon_2", "MainActivity" "icon_n"]
+    List<String> list = ["icon_1", "icon_2", "icon_n", "MainActivity"]
     DynamicIconFlutter.setIcon(icon: 'icon_1', listAvailableIcon: list);
     ```
 
@@ -203,7 +203,7 @@ Now, you can call `DynamicIconFlutter.setAlternateIconName` with the `CFBundleAl
 From your Dart code, you need to import the plugin and use it's static methods:
 
 ```dart 
-import 'package:flutter_dynamic_icon/flutter_dynamic_icon.dart';
+import 'package:dynamic_icon_flutter/dynamic_icon_flutter.dart';
 
 try {
   if (await DynamicIconFlutter.supportsAlternateIcons) {
