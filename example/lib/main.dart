@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
                 label: const Text("Team Fortress"),
                 onPressed: () async {
                   try {
-                    print(await DynamicIconFlutter.supportsAlternateIcons);
+                    //print(await DynamicIconFlutter.supportsAlternateIcons);
                     if (await DynamicIconFlutter.supportsAlternateIcons) {
                       await DynamicIconFlutter.setAlternateIconName(
                           "teamfortress");
@@ -101,12 +101,12 @@ class _MyAppState extends State<MyApp> {
                       });
                       return;
                     }
-                  } on PlatformException {
-                  } catch (e) {}
-                  _scaffoldKey.currentState?.hideCurrentSnackBar();
-                  _scaffoldKey.currentState?.showSnackBar(const SnackBar(
-                    content: Text("Failed to change app icon"),
-                  ));
+                  } on PlatformException catch (e) {
+                    _scaffoldKey.currentState?.hideCurrentSnackBar();
+                    _scaffoldKey.currentState?.showSnackBar(const SnackBar(
+                      content: Text("Failed to change app icon"),
+                    ));
+                  }
                 },
               ),
               OutlineButton.icon(
@@ -127,12 +127,12 @@ class _MyAppState extends State<MyApp> {
                       });
                       return;
                     }
-                  } on PlatformException {
-                  } catch (e) {}
-                  _scaffoldKey.currentState?.hideCurrentSnackBar();
-                  _scaffoldKey.currentState?.showSnackBar(const SnackBar(
-                    content: Text("Failed to change app icon"),
-                  ));
+                  } on PlatformException catch (e) {
+                    _scaffoldKey.currentState?.hideCurrentSnackBar();
+                    _scaffoldKey.currentState?.showSnackBar(const SnackBar(
+                      content: Text("Failed to change app icon"),
+                    ));
+                  }
                 },
               ),
               const SizedBox(
@@ -156,12 +156,12 @@ class _MyAppState extends State<MyApp> {
                       });
                       return;
                     }
-                  } on PlatformException {
-                  } catch (e) {}
-                  _scaffoldKey.currentState?.hideCurrentSnackBar();
-                  _scaffoldKey.currentState?.showSnackBar(const SnackBar(
-                    content: Text("Failed to change app icon"),
-                  ));
+                  } on PlatformException catch (e) {
+                    _scaffoldKey.currentState?.hideCurrentSnackBar();
+                    _scaffoldKey.currentState?.showSnackBar(const SnackBar(
+                      content: Text("Failed to change app icon"),
+                    ));
+                  }
                 },
               ),
             ],

@@ -36,4 +36,14 @@ class DynamicIconFlutter {
       <String, dynamic>{'iconName': iconName},
     );
   }
+
+  // For Android
+  static Future<void> setIcon(
+      {required String icon, required List<String> listAvailableIcon}) async {
+    Map<String, dynamic> data = {
+      'icon': icon,
+      'listAvailableIcon': listAvailableIcon
+    };
+    await _channel.invokeListMethod('setIcon', data);
+  }
 }

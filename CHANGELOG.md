@@ -10,3 +10,7 @@
 
 * Update Android icon changing
 
+## 0.0.4
+
+* Big update ^^
+
