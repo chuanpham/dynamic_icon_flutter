@@ -20,3 +20,7 @@
 ## 0.0.6
 
 * fix bugs
+
+## 0.0.7
+
+* update README
