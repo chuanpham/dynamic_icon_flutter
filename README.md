@@ -5,6 +5,21 @@ A flutter plugin for dynamically changing app icon in mobile platform. Supports 
 
 * Each android version will have different behavior, with Android 8 it may take a few seconds before we can notice the change
 * Caution: Using this feature on some android versions will cause your app to crash (it will crash the first time you change the icon, next time it won't), it's a bad user experience that you have to crash the app to change the app icon, you can read more about this issue [here](https://github.com/tastelessjolt/flutter_dynamic_icon/pull/10#issuecomment-959260628)
+* Due to Splash screen problems of newest Android versions, please consider to remove the below code in your activivy and activity-alias tags:
+```
+  <meta-data
+                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+                android:resource="@drawable/launch_background"
+                />
+```
+* Add this code to your MainActivity.kt, in onCreate function:
+```
+	 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            // Disable the Android splash screen fade out animation to avoid
+            // a flicker before the similar frame is drawn in Flutter.
+            splashScreen.setOnExitAnimationListener { splashScreenView -> splashScreenView.remove() }
+        }
+```
 ### Android  Integration
 
 1. Add the latest version of the plugin to your `pubpsec.yaml` under dependencies section
@@ -21,7 +36,7 @@ A flutter plugin for dynamically changing app icon in mobile platform. Supports 
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize"
             android:enabled="true">
-
+				
             <meta-data
                 android:name="io.flutter.embedding.android.NormalTheme"
                 android:resource="@style/NormalTheme"
