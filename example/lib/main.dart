@@ -1,13 +1,14 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:flutter/material.dart';
-
-import 'package:flutter/services.dart';
 import 'package:dynamic_icon_flutter/dynamic_icon_flutter.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -34,7 +35,8 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+    GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey();
+
     return MaterialApp(
       home: Scaffold(
         key: _scaffoldKey,
@@ -53,7 +55,7 @@ class _MyAppState extends State<MyApp> {
                   style: Theme.of(context).textTheme.headline4,
                 ),
               ),
-              OutlineButton.icon(
+              OutlinedButton.icon(
                 icon: const Icon(Icons.ac_unit),
                 label: const Text("Team Fortress"),
                 onPressed: () async {
@@ -73,9 +75,8 @@ class _MyAppState extends State<MyApp> {
                       });
                       return;
                     }
-                  } on PlatformException catch (e) {
+                  } on PlatformException {
                     // ignore: avoid_print
-                    print(e.toString());
                     _scaffoldKey.currentState?.hideCurrentSnackBar();
                     _scaffoldKey.currentState?.showSnackBar(const SnackBar(
                       content: Text("Failed to change app icon"),
@@ -83,7 +84,7 @@ class _MyAppState extends State<MyApp> {
                   }
                 },
               ),
-              OutlineButton.icon(
+              OutlinedButton.icon(
                 icon: const Icon(Icons.ac_unit),
                 label: const Text("Photos"),
                 onPressed: () async {
@@ -101,7 +102,7 @@ class _MyAppState extends State<MyApp> {
                       });
                       return;
                     }
-                  } on PlatformException catch (e) {
+                  } on PlatformException {
                     _scaffoldKey.currentState?.hideCurrentSnackBar();
                     _scaffoldKey.currentState?.showSnackBar(const SnackBar(
                       content: Text("Failed to change app icon"),
@@ -109,7 +110,7 @@ class _MyAppState extends State<MyApp> {
                   }
                 },
               ),
-              OutlineButton.icon(
+              OutlinedButton.icon(
                 icon: const Icon(Icons.ac_unit),
                 label: const Text("Chills"),
                 onPressed: () async {
@@ -127,7 +128,7 @@ class _MyAppState extends State<MyApp> {
                       });
                       return;
                     }
-                  } on PlatformException catch (e) {
+                  } on PlatformException {
                     _scaffoldKey.currentState?.hideCurrentSnackBar();
                     _scaffoldKey.currentState?.showSnackBar(const SnackBar(
                       content: Text("Failed to change app icon"),
@@ -138,7 +139,7 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(
                 height: 28,
               ),
-              OutlineButton.icon(
+              OutlinedButton.icon(
                 icon: const Icon(Icons.restore_outlined),
                 label: const Text("Restore Icon"),
                 onPressed: () async {
@@ -156,7 +157,7 @@ class _MyAppState extends State<MyApp> {
                       });
                       return;
                     }
-                  } on PlatformException catch (e) {
+                  } on PlatformException {
                     _scaffoldKey.currentState?.hideCurrentSnackBar();
                     _scaffoldKey.currentState?.showSnackBar(const SnackBar(
                       content: Text("Failed to change app icon"),
