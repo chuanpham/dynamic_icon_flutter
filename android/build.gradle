@@ -26,7 +26,10 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 33
-    namespace 'com.chuanpham.dynamic_icon_flutter'
+    // conditional for compatibility with older gradle versions
+    if (project.android.hasProperty('namespace')) {
+        namespace 'com.chuanpham.dynamic_icon_flutter'
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
