@@ -25,7 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 35
     // conditional for compatibility with older gradle versions
     if (project.android.hasProperty('namespace')) {
         namespace 'com.chuanpham.dynamic_icon_flutter'
@@ -45,7 +45,7 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 19
     }
 }
 
